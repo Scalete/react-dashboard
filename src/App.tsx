@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Menu from './components/Menu/Menu';
+import Menu from './components/Sidebar/Sidebar';
 import Home from './components/Home/Home';
 
 const App: FC = () => {
