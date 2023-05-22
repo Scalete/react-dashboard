@@ -106,6 +106,26 @@
                 color: $color-other-black;
                 border-bottom: 1px solid $border-table;
 
+                &.active span, &.inactive span {
+                    display: flex;
+                    justify-content: center;
+                    padding: 4px 0;
+                }
+
+                &.active span {
+                    color: $color-green;
+                    background: rgba(22, 192, 152, 0.38);
+                    border: 1px solid $color-green;
+                    border-radius: 4px;
+                }
+
+                &.inactive span {
+                    color: $color-red;
+                    background: $color-light-pink;
+                    border: 1px solid $color-red;
+                    border-radius: 4px;
+                }
+
                 &:first-child {
                     padding-left: 38px;
                 }
@@ -139,7 +159,7 @@
 
             li.active a {
                 color: $white;
-                background-color: $hover-item-color ;
+                background-color: $hover-item-color;
                 border: 1px solid $hover-item-color;
             }
 

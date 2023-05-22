@@ -7,6 +7,10 @@ const Home: FC = () => {
     //template customers
     const dataCustomers: Customer[] = data;
 
+    const renderCustomerStatus = (customer: Customer): string => {
+        return customer.status.toLocaleLowerCase() === 'active' ? styles.active: styles.inactive
+    }
+    
     const renderCustomers = () => {
         return dataCustomers.map((customer, i) => (
             <tr key={i}>
@@ -15,7 +19,7 @@ const Home: FC = () => {
                 <td>{customer.tel}</td>
                 <td>{customer.email}</td>
                 <td>{customer.country}</td>
-                <td>{customer.status}</td>
+                <td className={renderCustomerStatus(customer)}><span>{customer.status}</span></td>
             </tr>
         ));
     }
