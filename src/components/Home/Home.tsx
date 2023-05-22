@@ -2,7 +2,11 @@ import { FC } from 'react'
 import styles from './Home.module.scss'
 import { Customer, data } from '../../api/Customer';
 
-const Home: FC = () => {
+interface HomeProps {
+    setSidebarIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Home: FC<HomeProps> = ({setSidebarIsActive}) => {
 
     //template customers
     const dataCustomers: Customer[] = data;
@@ -14,19 +18,30 @@ const Home: FC = () => {
     const renderCustomers = () => {
         return dataCustomers.map((customer, i) => (
             <tr key={i}>
-                <td>{customer.fullName}</td>
-                <td>{customer.company}</td>
-                <td>{customer.tel}</td>
-                <td>{customer.email}</td>
-                <td>{customer.country}</td>
-                <td className={renderCustomerStatus(customer)}><span>{customer.status}</span></td>
+                <td><div>{customer.fullName}</div></td>
+                <td><div>{customer.company}</div></td>
+                <td><div>{customer.tel}</div></td>
+                <td><div>{customer.email}</div></td>
+                <td><div>{customer.country}</div></td>
+                <td className={renderCustomerStatus(customer)}><div><span>{customer.status}</span></div></td>
             </tr>
         ));
     }
 
+    const onBurgerClick = () => {
+        setSidebarIsActive(prev => !prev);
+    }
+
     return (
         <div className={styles.home}>
-            <h2>Hello Evano 👋🏼,</h2>
+            <div className={styles.homeHeader}>
+                <div className={styles.burger} onClick={onBurgerClick}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h2>Hello Evano 👋🏼,</h2>
+            </div>
             <div className={styles.table}>
                 <div className={styles.tableHeader}>
                     <div className={styles.text}>
@@ -38,21 +53,24 @@ const Home: FC = () => {
                         <input type="text" placeholder='Search'/>
                     </div>
                 </div>
-                <table width="100%">
-                    <thead>
-                        <tr>
-                            <td style={{paddingRight: '16px'}}>Customer Name</td>
-                            <td style={{paddingRight: '35px'}}>Company</td>
-                            <td style={{paddingRight: '16px'}}>Phone Number</td>
-                            <td style={{paddingRight: '19px'}}>Email</td>
-                            <td style={{paddingRight: '51px'}}>Country</td>
-                            <td style={{paddingLeft: '15px'}}>Status</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {renderCustomers()}
-                    </tbody>
-                </table>
+                <div className={styles.tableContainer}>
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td style={{paddingRight: '16px'}}>Customer Name</td>
+                                <td style={{paddingRight: '35px'}}>Company</td>
+                                <td style={{paddingRight: '16px'}}>Phone Number</td>
+                                <td style={{paddingRight: '19px'}}>Email</td>
+                                <td style={{paddingRight: '51px'}}>Country</td>
+                                <td style={{paddingLeft: '15px'}}>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {renderCustomers()}
+                        </tbody>
+                    </table>
+                </div>
+                
                 <div className={styles.tableFooter}>
                     <span>Showing data 1 to 8 of  256K entries</span>
                     <div className={styles.pagination}>

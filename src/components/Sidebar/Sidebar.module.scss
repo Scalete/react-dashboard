@@ -1,5 +1,6 @@
 @import 'src/scss/core/variables';
 @import 'src/scss/core/mixin';
+@import 'src/scss/core/media-queryes';
 
 .sidebar {
     display: flex;
@@ -13,12 +14,16 @@
     .logo {
         display: flex;
         align-items: flex-end;
+        
+        svg {
+            flex-shrink: 0;
+        }
     }
 
     h2 {
         margin-left: 8px;
         font-weight: 600;
-        font-size: res(20, 26);
+        font-size: res(18, 26);
 
         + span {
             font-size: 10px;
@@ -88,6 +93,20 @@
                     color: $status-color;
                 }
             }
+        }
+    }
+
+    @include mobile {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        transition: opacity $normal, visibility $normal;
+        width: 65%;
+        z-index: 3;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

@@ -1,7 +1,33 @@
+@import 'src/scss/core/variables';
+@import 'src/scss/core/media-queryes';
+
 .dashboard {
     display: flex;
 
     main {
         width: 100%;
+    }
+
+    .overlay {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background-color: gray;
+        transition: opacity $normal, visibility $normal;
+    }
+
+    @include mobile {
+        .overlay {
+            display: block;
+
+            &.active {
+                opacity: .5;
+                visibility: visible;
+            }
+        }
     }
 }
