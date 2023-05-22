@@ -4,7 +4,7 @@ export interface Customer {
     tel: string;
     email: string;
     country: string;
-    status: string;
+    status?: string;
 }
 
 export const data: Customer[] = [

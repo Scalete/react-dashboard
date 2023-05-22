@@ -70,7 +70,7 @@
 
         input {
             width: 216px;
-            padding: 10px 20px 10px 40px;
+            padding: 10px 35px 10px 40px;
             font-weight: 400;
             font-size: 12px;
             letter-spacing: -0.01em;
@@ -85,11 +85,27 @@
             }
         }
 
-        svg {
+        .searchIcon {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             left: 8px;
+        }
+
+        .searchClose {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity $normal, visibility $normal;
+            right: 5px;
+            cursor: pointer;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 
@@ -204,6 +220,13 @@
                 border-radius: 4px;
             }
         }
+    }
+
+    .notFound {
+        font-size: res(20, 40);
+        color: grey;
+        padding: 40px 0;
+        text-align: center;
     }
 
     @include mobile {

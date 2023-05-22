@@ -97,9 +97,9 @@
     }
 
     @include mobile {
+        position: absolute;
         opacity: 0;
         visibility: hidden;
-        position: absolute;
         transition: opacity $normal, visibility $normal;
         width: 65%;
         z-index: 3;
