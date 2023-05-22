@@ -6,7 +6,18 @@ $version-color           : #838383;
 $nav-link-color          : #9197B3;
 $hover-item-color        : #5932EA;
 $status-color            : #757575;
+$placeholder             : #B5B7C0;
+$color-light-green       : #16C098;
+$color-search            : #F9FBFF;
+$color-other-black       : #292D32;
+$border-table            : #EEEEEE;
+$pagination-btn          : #F5F5F5;
+$pagination-number       : #404B52;
 
 // transition
 $fast                    : .2s;
 $normal                  : .5s;
+
+// breakpoints
+$screen-sm-max          : 1023px;
+$screen-sm-min          : 1024px;

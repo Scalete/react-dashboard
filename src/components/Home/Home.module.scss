@@ -1,3 +1,162 @@
+@import 'src/scss/core/variables';
+@import 'src/scss/core/mixin';
+@import 'src/scss/core/media-queryes';
+
 .home {
+    margin: 41px 95px;
+
+    h1 {
+        margin-bottom: 7px;
+        font-weight: 600;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+
+        + span {
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: $color-light-green;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 51px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        background-color: $white;
+        box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+        border-radius: 30px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tableHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 53px 40px 38px;
+    }
+
+    .search {
+        position: relative;
+
+        input {
+            width: 216px;
+            padding: 10px 20px 10px 40px;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: -0.01em;
+            background-color: $color-search;
+            border: none;
+            outline: none;
+            transition: border $fast;
+
+            &::placeholder {
+                color: $placeholder;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 8px;
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+
+        thead {
+            border-bottom: 1px solid $border-table;
+
+            tr {
+                font-size: 14px;
+                letter-spacing: -0.01em;
+                color: $placeholder;
+            }
+
+            td {
+                padding-bottom: 14px;
+
+                &:first-child {
+                    padding-left: 38px;
+                }
     
+                &:last-child {
+                    padding-right: 44px;
+                }
+            }
+        }
+
+        tbody {
+
+            td {
+                padding: 24px 0;
+                font-size: 14px;
+                letter-spacing: -0.01em;
+                color: $color-other-black;
+                border-bottom: 1px solid $border-table;
+
+                &:first-child {
+                    padding-left: 38px;
+                }
+    
+                &:last-child {
+                    padding-right: 44px;
+                }
+            }
+        }
+    }
+
+    .tableFooter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 40px 0 38px;
+
+        > span {
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: $placeholder;
+        }
+
+        .pages {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            color: $pagination-number;
+
+            li.active a {
+                color: $white;
+                background-color: $hover-item-color ;
+                border: 1px solid $hover-item-color;
+            }
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 24px;
+                background-color: $pagination-btn;
+                border: 1px solid $border-table;
+                border-radius: 4px;
+            }
+        }
+    }
+    
+    @include desktop {
+        margin-left: 71px;
+    }
 }
