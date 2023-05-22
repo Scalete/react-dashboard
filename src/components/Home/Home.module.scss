@@ -100,7 +100,7 @@
         tbody {
 
             td {
-                padding: 24px 0;
+                padding: 19px 0;
                 font-size: 14px;
                 letter-spacing: -0.01em;
                 color: $color-other-black;
@@ -132,6 +132,7 @@
     
                 &:last-child {
                     padding-right: 44px;
+                    width: 123px;
                 }
             }
         }
@@ -141,7 +142,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 40px 0 38px;
+        padding: 24px 40px 0 38px;
 
         > span {
             font-size: 14px;

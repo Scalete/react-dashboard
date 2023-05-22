@@ -41,12 +41,12 @@ const Home: FC = () => {
                 <table width="100%">
                     <thead>
                         <tr>
-                            <td>Customer Name</td>
-                            <td>Company</td>
-                            <td>Phone Number</td>
-                            <td>Email</td>
-                            <td>Country</td>
-                            <td>Status</td>
+                            <td style={{paddingRight: '16px'}}>Customer Name</td>
+                            <td style={{paddingRight: '35px'}}>Company</td>
+                            <td style={{paddingRight: '16px'}}>Phone Number</td>
+                            <td style={{paddingRight: '19px'}}>Email</td>
+                            <td style={{paddingRight: '51px'}}>Country</td>
+                            <td style={{paddingLeft: '15px'}}>Status</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,7 +63,7 @@ const Home: FC = () => {
                             <li><a href="/">2</a></li>
                             <li><a href="/">3</a></li>
                             <li><a href="/">4</a></li>
-                            <li>...</li>
+                            <li style={{alignSelf: 'flex-end'}}>...</li>
                             <li><a href="/">40</a></li>
                             <li><a href="/"><svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.344.944h1.728l2.76 2.724-2.76 2.724H.344l2.772-2.724L.344.944Z" fill="#404B52"/></svg></a></li>
                         </ul>
