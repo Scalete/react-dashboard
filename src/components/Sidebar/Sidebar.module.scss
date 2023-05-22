@@ -50,6 +50,12 @@
                 font-size: 14px;
                 letter-spacing: -0.01em;
                 color: $nav-link-color;
+                transition: background-color $fast, color $fast;
+
+                &:hover {
+                    color: $white;
+                    background-color: $hover-item-color;
+                }
             }
 
             span {
