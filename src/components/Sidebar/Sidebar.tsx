@@ -54,7 +54,7 @@ const Menu: FC<{sidebarIsActive: boolean}> = ({sidebarIsActive}) => {
             </ul>
             <div className={styles.profile}>
                 <div>
-                    <img src="/profile.png" alt="Profile" />
+                    <img src="./profile.png" alt="Profile" />
                 </div>
                 <div className={styles.profileWrapper}>
                     <h4>Evano</h4>
